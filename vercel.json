@@ -1,0 +1,15 @@
+{
+  "cleanUrls": true,
+  "builds": [
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "styles.css", "use": "@vercel/static" },
+    { "src": "game.js", "use": "@vercel/static" },
+    { "src": "audio.js", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/game.js", "dest": "/game.js" },
+    { "src": "/audio.js", "dest": "/audio.js" },
+    { "src": "/styles.css", "dest": "/styles.css" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}

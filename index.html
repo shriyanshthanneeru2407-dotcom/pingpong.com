@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Play retro 2D table tennis vs smart AI. Synthesized sound effects, fluid neon visuals, and multiple difficulties (Easy, Hard, Extreme). Play now on pingpong.com!">
+  <meta name="keywords" content="ping pong, table tennis, 2d game, neon game, retro arcade, canvas game, web game, play ping pong">
+  <meta name="author" content="Antigravity AI">
+  <title>pingpong.com - Neon 2D Retro Table Tennis Arcade</title>
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Game Header -->
+  <header>
+    <h1 class="logo" id="logoText">pingpong</h1>
+    <div class="subtitle" id="gameSubtitle">Retro Neon Arena</div>
+  </header>
+
+  <!-- Main Game Board Container -->
+  <div class="game-wrapper" id="gameWrapper">
+    <!-- HTML5 Canvas for game loop rendering -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- CRT Scanlines and Vignette for premium arcade look -->
+    <div class="crt-scanlines"></div>
+    <div class="crt-vignette"></div>
+
+    <!-- Point Score Toast Alert -->
+    <div class="score-toast" id="scoreToast">PLAYER +1</div>
+
+    <!-- MAIN START MENU OVERLAY -->
+    <div class="screen-overlay" id="menuOverlay">
+      <div class="menu-card">
+        <h2 class="menu-title" id="menuTitleMain">PING PONG</h2>
+        
+        <!-- Difficulty Selector -->
+        <div class="difficulty-section" id="diffSection">
+          <div class="section-label" id="diffLabel">Select Difficulty</div>
+          <div class="difficulty-buttons">
+            <button class="diff-btn" id="btnEasy" data-difficulty="easy">Easy</button>
+            <button class="diff-btn active" id="btnHard" data-difficulty="hard">Hard</button>
+            <button class="diff-btn" id="btnExtreme" data-difficulty="extreme">Extreme</button>
+          </div>
+        </div>
+
+        <button class="action-btn" id="startBtn">Start Game</button>
+      </div>
+    </div>
+
+    <!-- GAME PAUSE OVERLAY -->
+    <div class="screen-overlay hidden" id="pauseOverlay">
+      <div class="menu-card">
+        <h2 class="menu-title pause" id="menuTitlePause">PAUSED</h2>
+        <button class="action-btn" id="resumeBtn">Resume</button>
+        <button class="secondary-action" id="menuBtn">Main Menu</button>
+      </div>
+    </div>
+
+    <!-- GAME OVER SCREEN OVERLAY -->
+    <div class="screen-overlay hidden" id="gameOverOverlay">
+      <div class="menu-card">
+        <h2 class="menu-title" id="gameOverTitle">VICTORY!</h2>
+        <p class="section-label" id="gameOverDetails" style="margin-bottom: 1.5rem; text-transform: none; letter-spacing: 1px; color: var(--text-main); font-size: 1.05rem;">
+          You defeated the AI 11 - 8!
+        </p>
+        <button class="action-btn" id="restartBtn">Play Again</button>
+        <button class="secondary-action" id="menuBtnSecondary">Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUD Control bar (under game wrapper) -->
+  <div class="hud-controls" id="hudControls">
+    <button class="hud-btn" id="hudPauseBtn">
+      <svg viewBox="0 0 24 24" id="pauseIcon">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+      <span id="pauseBtnText">Pause (Space)</span>
+    </button>
+    
+    <button class="hud-btn" id="hudSoundBtn">
+      <svg viewBox="0 0 24 24" id="soundIcon">
+        <!-- Default Sound On speaker path -->
+        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.74 2.5-2.26 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+      </svg>
+      <span id="soundBtnText">Sound: On</span>
+    </button>
+  </div>
+
+  <!-- Controls and Play Instructions info -->
+  <section class="game-info" id="gameInfoSection">
+    <p style="margin-bottom: 0.4rem;">
+      Controls: Move your mouse or slide your finger on mobile to control the <strong>Left Paddle</strong>.
+    </p>
+    <p>
+      Alternatively, use <strong>Arrow Keys</strong> or <strong>W / S Keys</strong>. Press <strong>Space</strong> to Pause/Resume.
+    </p>
+    <p style="margin-top: 0.6rem; font-size: 0.75rem; color: var(--color-cyan); text-transform: uppercase; letter-spacing: 1px;">
+      First to 11 points wins!
+    </p>
+  </section>
+
+  <!-- Core Javascript Module -->
+  <script type="module" src="game.js"></script>
+</body>
+</html>
