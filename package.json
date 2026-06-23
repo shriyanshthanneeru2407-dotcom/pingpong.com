@@ -1,0 +1,16 @@
+{
+  "name": "pingpong",
+  "version": "1.0.0",
+  "description": "PingPong - Premium Cyberpunk Table Tennis Game",
+  "scripts": {
+    "dev": "npx -y http-server -p 3000 --cors -o"
+  },
+  "keywords": [
+    "game",
+    "pingpong",
+    "cyberpunk",
+    "canvas"
+  ],
+  "author": "",
+  "license": "ISC"
+}
