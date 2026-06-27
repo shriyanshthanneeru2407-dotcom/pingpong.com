@@ -15,7 +15,7 @@ This game features three distinct levels of smart AI difficulty, a dynamic neon 
 ## 🚀 Live Demo
 
 You can access the live web deployment here:
-**👉 [https://pingpong-shriyansh.vercel.app](https://pingpong-shriyansh.vercel.app)**
+**👉 [https://shriyanshthanneeru2407-dotcom.github.io/pingpong.com/](https://shriyanshthanneeru2407-dotcom.github.io/pingpong.com/)**
 
 ---
 
